@@ -6,7 +6,7 @@
 
 [![Mobile Tests](https://github.com/MateusCerqueiraG/mobile-tests-appium/actions/workflows/mobile.yml/badge.svg)](https://github.com/MateusCerqueiraG/mobile-tests-appium/actions/workflows/mobile.yml)
 &nbsp;
-[![Relatório](https://img.shields.io/badge/📊_Relatório-execução_em_emulador-5fd0e6?style=flat&labelColor=103a4e)](https://mateuscerqueirag.github.io/mobile-tests-appium/)
+[![Relatório](https://img.shields.io/badge/📊_Relatório-ao_vivo-5fd0e6?style=flat&labelColor=103a4e)](https://mateuscerqueirag.github.io/mobile-tests-appium/)
 
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
 ![Appium](https://img.shields.io/badge/Appium-662D91?logo=appium&logoColor=white)
