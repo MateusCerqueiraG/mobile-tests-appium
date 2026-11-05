@@ -44,10 +44,14 @@ jobs:
         with:
           api-level: 30
           arch: x86_64
-          target: google_apis
+          target: default
           profile: pixel_5
+          cores: 2
+          ram-size: 4096M
           disable-animations: true
+          emulator-options: -no-snapshot -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -camera-front none
           script: |
+            adb wait-for-device
             appium --log appium.log &
             for i in $(seq 1 30); do curl -sf http://127.0.0.1:4723/status && break; sleep 2; done
             pytest --reruns 2 --reruns-delay 5 --alluredir=allure-results
