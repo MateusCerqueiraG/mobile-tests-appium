@@ -16,7 +16,7 @@
 
 ---
 
-Automação de **testes E2E mobile** no **Android** com **Appium** (driver UiAutomator2) e **pytest** — abrindo um app real no dispositivo, interagindo com a tela (toques, scroll) e validando o comportamento. Roda em **CI** sobre um **emulador Android de verdade** (via `android-emulator-runner`), com relatório **Allure**.
+Automação de **testes E2E mobile** no **Android** com **Appium** (driver UiAutomator2) e **pytest** — abrindo um app real no dispositivo, interagindo com a tela (toques, scroll) e validando o comportamento. **Validado contra um emulador Android real**, com [relatório da execução](https://mateuscerqueirag.github.io/mobile-tests-appium/) publicado.
 
 > 🎯 **Alvo sob teste:** o app **Configurações do Android** (`com.android.settings`) — um app **nativo que existe em todo dispositivo/emulador**, então a suíte roda **sem depender de nenhum APK externo**. As mesmas técnicas valem para qualquer `.apk` (basta trocar o `app_package`/`app_activity` ou apontar o `app` para o arquivo).
 
