@@ -5,6 +5,8 @@
 **Automação Mobile (Android)** &nbsp;·&nbsp; Appium &nbsp;·&nbsp; Python &nbsp;·&nbsp; UiAutomator2
 
 [![Mobile Tests](https://github.com/MateusCerqueiraG/mobile-tests-appium/actions/workflows/mobile.yml/badge.svg)](https://github.com/MateusCerqueiraG/mobile-tests-appium/actions/workflows/mobile.yml)
+&nbsp;
+[![Relatório](https://img.shields.io/badge/📊_Relatório-execução_em_emulador-5fd0e6?style=flat&labelColor=103a4e)](https://mateuscerqueirag.github.io/mobile-tests-appium/)
 
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
 ![Appium](https://img.shields.io/badge/Appium-662D91?logo=appium&logoColor=white)
@@ -41,7 +43,7 @@ Teste mobile precisa de um **dispositivo/emulador**, e o runner grátis do GitHu
 | ✅ **Validação** | todo push | instala tudo, sobe o Appium e roda `pytest --collect-only` (garante que o código importa e coleta sem erro). **É o que o badge reflete.** |
 | 📱 **Emulador (best-effort)** | sob demanda (`workflow_dispatch`) | tenta a suíte num emulador Android real; é *falha permitida* com timeout, pra não travar o badge |
 
-> **Prova de execução real:** os 3 testes foram **validados contra um emulador Android de verdade** (3/3 verde). Em ambiente profissional, suíte mobile costuma rodar em **device farm** (AWS Device Farm / BrowserStack) — bem mais confiável que emulador no CI grátis. É assim, por exemplo, no projeto real da SEA (`sesc-mobile-tests`, AWS Device Farm).
+> **Prova de execução real:** os 3 testes foram **validados contra um emulador Android de verdade** (3/3 verde) — [**relatório dessa execução**](https://mateuscerqueirag.github.io/mobile-tests-appium/). Em ambiente profissional, suíte mobile costuma rodar em **device farm** (AWS Device Farm / BrowserStack) — bem mais confiável que emulador no CI grátis. É assim, por exemplo, no projeto real da SEA (`sesc-mobile-tests`, AWS Device Farm).
 
 ## 🧰 Stack & práticas
 
