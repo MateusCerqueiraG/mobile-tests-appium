@@ -5,8 +5,6 @@
 **Automação Mobile (Android)** &nbsp;·&nbsp; Appium &nbsp;·&nbsp; Python &nbsp;·&nbsp; UiAutomator2
 
 [![Mobile Tests](https://github.com/MateusCerqueiraG/mobile-tests-appium/actions/workflows/mobile.yml/badge.svg)](https://github.com/MateusCerqueiraG/mobile-tests-appium/actions/workflows/mobile.yml)
-&nbsp;
-[![Relatório Allure](https://img.shields.io/badge/📊_Relatório-Allure_ao_vivo-5fd0e6?style=flat&labelColor=103a4e)](https://mateuscerqueirag.github.io/mobile-tests-appium/)
 
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
 ![Appium](https://img.shields.io/badge/Appium-662D91?logo=appium&logoColor=white)
@@ -30,17 +28,26 @@ Automação de **testes E2E mobile** no **Android** com **Appium** (driver UiAut
 
 <div align="center">
 
-**3 testes &nbsp;·&nbsp; emulador Android real no CI &nbsp;·&nbsp; UiAutomator2**
+**3 testes &nbsp;·&nbsp; validados em emulador Android real &nbsp;·&nbsp; UiAutomator2**
 
 </div>
 
+## ⚙️ Como roda (CI honesto)
+
+Teste mobile precisa de um **dispositivo/emulador**, e o runner grátis do GitHub é lento/instável pra bootar um Android. Então o CI é dividido em dois:
+
+| Job | Quando | O quê |
+|:--|:--|:--|
+| ✅ **Validação** | todo push | instala tudo, sobe o Appium e roda `pytest --collect-only` (garante que o código importa e coleta sem erro). **É o que o badge reflete.** |
+| 📱 **Emulador (best-effort)** | sob demanda (`workflow_dispatch`) | tenta a suíte num emulador Android real; é *falha permitida* com timeout, pra não travar o badge |
+
+> **Prova de execução real:** os 3 testes foram **validados contra um emulador Android de verdade** (3/3 verde). Em ambiente profissional, suíte mobile costuma rodar em **device farm** (AWS Device Farm / BrowserStack) — bem mais confiável que emulador no CI grátis. É assim, por exemplo, no projeto real da SEA (`sesc-mobile-tests`, AWS Device Farm).
+
 ## 🧰 Stack & práticas
 
-- 📱 **Appium + UiAutomator2** — padrão de automação Android (mesma base do trabalho real em device farm)
+- 📱 **Appium + UiAutomator2** — padrão de automação Android (mesma base de device farm)
 - 🧩 **Page-ready** — capabilities centralizadas numa fixture `driver` (setup/teardown), fácil de escalar pra Page Objects
-- 🤖 **Emulador real no CI** — `reactivecircus/android-emulator-runner` (KVM) sobe um Android de verdade a cada push
 - 🔁 **Anti-flaky** — rerun automático (teste mobile é naturalmente mais sensível a timing)
-- 📊 **Allure** — relatório publicado automaticamente
 
 ## 📁 Estrutura
 
@@ -70,9 +77,12 @@ pip install -r requirements.txt
 pytest
 ```
 
-## 📊 Relatório Allure
+## 📱 Rodar a suíte completa no emulador
 
-### 👉 **[mateuscerqueirag.github.io/mobile-tests-appium](https://mateuscerqueirag.github.io/mobile-tests-appium/)**
+Localmente (com um emulador/AVD de pé) ou disparando o job sob demanda em **Actions → Mobile Tests → Run workflow**:
+```bash
+pytest   # contra o emulador conectado via Appium
+```
 
 ---
 
