@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Relatório de Testes Mobile — Android</title>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#eef3f6;color:#15242e;font-family:-apple-system,"Segoe UI",system-ui,Roboto,sans-serif;line-height:1.55}
+  .wrap{max-width:860px;margin:0 auto;padding:32px 20px 60px}
+  h1{font-size:25px;margin:0 0 4px}
+  .sub{color:#5a7180;font-size:14px;margin:0 0 24px}
+  .verdict{display:flex;gap:14px;align-items:center;background:#e4f6ec;border:1px solid #2e9e6b;border-radius:14px;padding:16px 20px;margin:0 0 24px}
+  .verdict .tag{font-weight:800;font-size:13px;letter-spacing:.5px;padding:5px 11px;border-radius:999px;background:#2e9e6b;color:#fff;white-space:nowrap}
+  .verdict p{margin:0;font-size:14.5px}
+  .intro{background:#fff;border:1px solid #dce5ea;border-radius:12px;padding:16px 18px;margin:0 0 24px;font-size:14.5px;color:#36505d}
+  .intro b{color:#0d7f93}
+  h2{font-size:16px;margin:28px 0 12px;color:#0d6274}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+  .kpi{background:#fff;border:1px solid #dce5ea;border-radius:12px;padding:14px 16px}
+  .kpi .n{font-size:24px;font-weight:800;color:#0d7f93;font-variant-numeric:tabular-nums}
+  .kpi .l{font-size:12.5px;color:#5a7180;margin-top:2px}
+  table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #dce5ea;border-radius:12px;overflow:hidden;font-size:14px}
+  th,td{padding:12px 14px;text-align:left;border-bottom:1px solid #eef2f5;vertical-align:top}
+  th{background:#f4f8fa;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;color:#6a828f}
+  tr:last-child td{border-bottom:none}
+  .ok{color:#2e9e6b;font-weight:700;white-space:nowrap}
+  .mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;color:#0d7f93}
+  .desc{color:#5a7180;font-size:13px}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+  .chip{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;background:#fff;border:1px solid #dce5ea;border-radius:8px;padding:6px 11px;color:#36505d}
+  footer{margin-top:36px;padding-top:16px;border-top:1px solid #dce5ea;font-size:12px;color:#8097a3}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>📱 Relatório de Testes Mobile — Android</h1>
+  <p class="sub">Appium · UiAutomator2 · app Configurações</p>
+
+  <div class="verdict">
+    <span class="tag">✅ 3/3 PASSOU</span>
+    <p>A suíte rodou contra um <b>emulador Android real</b> via Appium — abriu o app, validou o conteúdo e interagiu com a tela, sem falhas.</p>
+  </div>
+
+  <div class="intro">
+    <b>O que é um teste mobile automatizado?</b> É um robô (Appium) que controla um celular Android como um usuário faria — abre o app, lê a tela, toca e rola — e confere se tudo responde certo. Aqui o alvo é o app nativo de <b>Configurações</b>, que existe em qualquer Android.
+  </div>
+
+  <div class="meta">
+    <span class="chip">Plataforma: Android</span>
+    <span class="chip">Driver: UiAutomator2</span>
+    <span class="chip">Appium 3.x</span>
+    <span class="chip">Duração: ~43s</span>
+    <span class="chip">Ambiente: emulador</span>
+  </div>
+
+  <h2>📊 Resumo</h2>
+  <div class="kpis">
+    <div class="kpi"><div class="n">3</div><div class="l">testes executados</div></div>
+    <div class="kpi"><div class="n">3</div><div class="l">passaram</div></div>
+    <div class="kpi"><div class="n">0</div><div class="l">falharam</div></div>
+    <div class="kpi"><div class="n">~43s</div><div class="l">duração total</div></div>
+  </div>
+
+  <h2>🔎 Testes executados</h2>
+  <table>
+    <thead><tr><th>Teste</th><th>O que valida</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="mono">test_settings_app_launches</td>
+        <td class="desc">O app Configurações sobe e fica em primeiro plano</td>
+        <td class="ok">✓ passou</td>
+      </tr>
+      <tr>
+        <td class="mono">test_settings_shows_menu_items</td>
+        <td class="desc">A tela carrega e lista itens de menu (elementos nativos encontrados)</td>
+        <td class="ok">✓ passou</td>
+      </tr>
+      <tr>
+        <td class="mono">test_can_scroll_settings</td>
+        <td class="desc">Executa um gesto de rolagem e confirma o estado da tela</td>
+        <td class="ok">✓ passou</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <footer>
+    Execução contra emulador Android (Appium + UiAutomator2). Em ambiente profissional, suíte mobile roda em <b>device farm</b> (AWS Device Farm / BrowserStack). · Projeto de portfólio de QA · Mateus Cerqueira
+  </footer>
+</div>
+</body>
+</html>
